@@ -8,12 +8,12 @@ A Shell-based curse client to update your wow-addons
 
 
 ## How to use
-1) Create a tmp and a addon -dir where files can be downloaded (tmp) and unpacked (addons, this should be your wow-addon folder)
-2) change the paths in the nc_... files for the tmpPath and addonPath variables. A centralized config-file is coming soon!
-3) Edit the "addonlist.conf" and add for each line your preferred addon.
+1. Create a tmp and a addon -dir where files can be downloaded (tmp) and unpacked (addons, this should be your wow-addon folder)
+2. change the paths in the nc_... files for the tmpPath and addonPath variables. A centralized config-file is coming soon!
+3. Edit the "addonlist.conf" and add for each line your preferred addon.
 Visit http://www.curse.com/addons/wow/ and click on your addon. Now you can see the correct name of the addon in the adressbar.
 F.e. DBM will be "deadly-boss-mods" because of "http://www.curse.com/addons/wow/deadly-boss-mods"
-4) run ./NiraCurse.sh and lean back :-)
+4. run ./NiraCurse.sh and lean back :-)
 
 ## IMPORTANT
 Do a Backup BEFORE you run my awesome NiraCurse. (Autobackup will come soon)
