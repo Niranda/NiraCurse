@@ -1,16 +1,6 @@
 #!/bin/sh
 
-
-# ToDo: move to config-file!
-parallel=4								# number of parallelization for check and download
-addonlist="addonlist.conf"
-addonPath="addons"
-tmpPath="tmp"
-
-newV="$tmpPath/_nc_newVersions.log"
-curV="$addonPath/_nc_currentVersions.log"
-dwnlist="$tmpPath/_nc_downloadlist"
-unziplist="$tmpPath/_nc_unziplist"
+. ./settings.conf
 
 
 # Code...

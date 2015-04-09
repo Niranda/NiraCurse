@@ -2,11 +2,7 @@
 
 addonLink=$1
 
-# move to config-file
-tmpPath="tmp"
-
-dwnlist="$tmpPath/_nc_downloadlist"
-unziplist="$tmpPath/_nc_unziplist"
+. ./settings.conf
 
 
 if [ "$addonLink" = "" ]; then

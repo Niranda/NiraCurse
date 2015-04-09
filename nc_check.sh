@@ -2,13 +2,7 @@
 
 addonName=$1
 
-# move to config-file
-tmpPath="tmp"
-addonPath="addons"
-
-newV="$tmpPath/_nc_newVersions.log"
-curV="$addonPath/_nc_currentVersions.log"
-dwnlist="$tmpPath/_nc_downloadlist"
+. ./settings.conf
 
 # curse-variables
 curseUrl="http://www.curse.com/addons/wow/$addonName/download"

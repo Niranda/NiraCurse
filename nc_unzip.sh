@@ -2,9 +2,7 @@
 
 addonZipName=$1
 
-# move to config-file
-tmpPath="tmp"
-addonPath="addons"
+. ./settings.conf
 
 
 if [ "$addonZipName" = "" ]; then
