@@ -20,41 +20,26 @@ echo "Last update: "$(date +%Y-%m-%d/%H:%M:%S) > $newV
 > $newV
 if [ ! -f "$curV" ]; then > $curV; fi
 
+
+# Go...
+# ToDo: here load plugins
 xargs -a $addonlist -n 1 -P $parallel ./nc_check.sh			# parallelization of update-check
-
-# No xargs? Than use this methode ;-)
-#while read line; do
-#	./nc_check.sh "$line" &
-#done < "$addonlist"
-#wait
-
-
 
 echo
 
-if [ ! -s $dwnlist ]; then
+if [ ! -s $dwnlist ]; then						# there no updates
 	echo " * All AddOns are up2date - NiraCurse is done!"
-else
+else									# some updates found
+	echo " * Create a backup of current installed addons..."
+	./nc_backup.sh							# create a backup
+
+	echo
 	echo " * There are $(wc -l < $dwnlist) AddOn-Updates available..."
-
-	xargs -a $dwnlist -n 1 -P $parallel ./nc_download.sh
-
-# No xargs? Than use this methode ;-)
-#	while read line; do
-#		./nc_download.sh "$line" &
-#	done < "$dwnlist"
-#	wait
-
+	xargs -a $dwnlist -n 1 -P $parallel ./nc_download.sh		# download this updates
 
 	echo
 	echo " * Unzip $(wc -l < $unziplist) downloaded Addons..."
-	xargs -a $unziplist -n 1 -P $parallel ./nc_unzip.sh
-
-# No xargs? Than use this methode ;-)
-#	while read line; do
-#		./nc_unzip.sh "$line" &
-#	done < "$unziplist"
-#	wait
+	xargs -a $unziplist -n 1 -P $parallel ./nc_unzip.sh		# unzip downloaded updates
 
 	echo
 	echo " * Now all AddOns are up2date - NiraCurse is done!"
@@ -69,8 +54,10 @@ rm $unziplist
 
 echo
 echo
-echo " ***        NiraCurse - (c) Niranda.net 2015          *** "
+echo "================================================"
+echo " ***    NiraCurse - (c) Niranda.net 2015    *** "
 echo
-echo "     Simple to use - Easy to get - Visit: Niranda.net     "
+echo "Simple to use - Easy to get - Visit: Niranda.net"
+echo "================================================"
 echo
 echo
